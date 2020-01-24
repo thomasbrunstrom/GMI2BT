@@ -3,7 +3,7 @@ my_menu["breakfast"] = "Corn flakes"
 my_menu["lunch"] = "Falukorv och potatis"
 my_menu["dinner"] = "Hamburgare"
 print(my_menu)
-print("Till middag äter jag nästan alltid %s"  %my_menu["dinner"])
+print(f'Till middag äter jag nästan alltid {my_menu["dinner"]}')
 #{'breakfast': 'Corn flakes', 'lunch': 'Falukorv och potatis', 'dinner': 'Hamburgare'}
 #Till middag äter jag nästan alltid Hamburgare
 
@@ -25,7 +25,7 @@ print(my_menu_values)
 #dict_values(['Corn flakes', 'Falukorv och potatis', 'Köttfärssås och spagetti'])
 
 for key, value in my_menu.items():
-    print(key + ":" + value)
+    print(f'{key}:{value}')
 
 favorit_språk = {
     "Thomas" : ["Javascript", "C#", "HTML", "CSS"],
@@ -33,7 +33,7 @@ favorit_språk = {
     "Hans-Edy" : ["C#", "Java", "ADA"]
 }
 for name, languages in favorit_språk.items():
-    print("\n" + name.title() + "' favoritspråk är:")
+    print(f'{name.title()} favoritspråk är:')
     for lang in languages:
         print("\t" + lang)
 
@@ -50,23 +50,23 @@ users = {
     }
 }
 for username, userinfo in users.items():
-    print("\nUsername: " + username)
+    print(f'Username: {username}')
     full_name = userinfo["firstname"] + " " + userinfo["surname"]
     city = userinfo["city"]
-    print("Full name: %s and location: %s" %(full_name, city))
+    print(f'Full name: {full_name} and location: {city}')
 
 
 username = input("Ange ditt användarnamn")
 password = input("Ange ditt lösenord")
-print("Ditt användarnamn är: %s och lösenord är: %s" %(username, password))
+print(f'Ditt användarnamn är: {username} och lösenord är: {password}')
 
 age = input("Hur gammal är du? ")
 nummer_age = int(age)
-print("Ålder: %d %d" %(nummer_age, nummer_age + 10))
+print(f'Ålder: {nummer_age} {nummer_age + 10}')
 
 start = 0
 while start <= 5:
-    print("Nuvarande nummer: %s" %start)
+    print(f'Nuvarande nummer: {start}')
     start += 1
 
 print("Skriv något och programmet kommer repetera det du skrev.")
@@ -78,3 +78,37 @@ while message != "exit":
         break
     else :
         print(message)
+
+
+from Dog import Dog
+hund1 = Dog('Skrutten', 3)
+print(hund1)
+
+# Komma åt attribut
+print(hund1.age)
+print(hund1.name.title())
+
+# Anropa metoder
+hund1.sit()
+hund1.roll_over()
+
+# Skapa flera instanser
+hund2 = Dog('Fido', 5)
+hund3 = Dog('Aina', 6)
+
+
+# en bilklass
+from Car import Car, ElectricCar
+my_car = Car('audi', 'A4', 2018)
+print(my_car.get_descriptive_name())
+my_car.read_odometer()
+
+my_car.odometer_reading = 42
+my_car.read_odometer()
+my_car.update_odometer(55)
+my_car.read_odometer()
+
+my_tesla = ElectricCar('tesla', 'S', 2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()

@@ -1,0 +1,22 @@
+[
+    { 
+        "username" : "tbn",
+        "userinfo" : {
+            "fname" : "Thomas",
+            "ename" : "Brunström",
+            "birthday" : 19791204,
+            "eyecolor" : "Blue",
+            "haircolor" : "Brown"
+        }
+    },
+    { 
+        "username" : "hro",
+        "userinfo" : {
+            "fname" : "Hans",
+            "ename" : "Rosendahl",
+            "birthday" : 18550412,
+            "eyecolor" : "Brown",
+            "haircolor" : "Grey"
+        }
+    }
+]
