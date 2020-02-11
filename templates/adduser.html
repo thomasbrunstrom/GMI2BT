@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Users</title>
+</head>
+<body>
+    <h1>{{username}}</h1>
+    <form action="/adduser" method="post">
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" />
+        <label for="password">Password:</label>
+        <input id="password" type="password" name="password" />
+        <input type="submit" value="Register" name="submitbutton"/>
+    </form>
+
+    <h2>Users: </h2>
+    <ul>
+        {%for i in range(0, len)%} 
+  
+        <li>{{users[i]}}</li> 
+        {%endfor%}
+    </ul>
+</body>
+</html>
